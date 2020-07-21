@@ -11,8 +11,8 @@ NLP学习笔记
 -----
 ### 2. task1赛事详情与资料查找
 * 对 __零基础入门NLP之新闻文本分类__ 赛题目标和安排有了大致了解  
-* 寻找了与 __NLP__ 相关的学习资料，比如[开源组织ApacheCN编著的AiLearning相关学习路线和资料](https://github.com/ToNextOne2018/AiLearning) [廖雪峰的官方网站的Python教程](https://www.liaoxuefeng.com/wiki/1016959663602400)
-======
+* 寻找了与 __NLP__ 相关的学习资料，比如[开源组织ApacheCN编著的AiLearning相关学习路线和资料](https://github.com/ToNextOne2018/AiLearning)以及[廖雪峰的官方网站的Python教程](https://www.liaoxuefeng.com/wiki/1016959663602400)  
+-------
 ### 3. 总结
 * 路漫漫其修远兮，要想学有所成，还需不断努力、不断思考。
 * 艰难困苦，玉汝于成。
