@@ -167,7 +167,7 @@ plt.title("Histogram of char count")
 
 
 
-![png](C:/Users/14279/Desktop/jupyterTest1/output_9_1.png)
+![png](https://github.com/ToNextOne2018/NLP-Learning-Notes/tree/master/jupyterTest1/output_9_1.png)
 
 
 
@@ -185,7 +185,7 @@ plt.title("Graph1 Histogram of char count")
 
 
 
-![png](output_10_1.png)
+![png](https://github.com/ToNextOne2018/NLP-Learning-Notes/tree/master/jupyterTest1/output_10_1.png)
 
 
 
@@ -203,7 +203,7 @@ plt.title("Graph2 Histogram of char count")
 
 
 
-![png](output_11_1.png)
+![png](https://github.com/ToNextOne2018/NLP-Learning-Notes/tree/master/jupyterTest1/output_11_1.png)
 
 
 __分析：__  
@@ -227,7 +227,7 @@ plt.xlabel("category")
 
 
 
-![png](output_14_1.png)
+![png](https://github.com/ToNextOne2018/NLP-Learning-Notes/tree/master/jupyterTest1/output_14_1.png)
 
 
 __分析：__   
