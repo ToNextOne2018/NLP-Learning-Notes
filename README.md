@@ -287,6 +287,7 @@ __分析：__
 * '3750'、'900'、'648'这三个字符很大概率是标点符号
 ---------------------------  
 ## 4. 习题
+* 题目一：
 
 
 ```python
@@ -294,13 +295,27 @@ from collections import Counter
 all_lines = ' '.join(list(train_df['text']))   # 将text的中的字符重新组合成一个序列（由元组构成的列表）
 word_count = Counter(all_lines.split(" "))    # 通过空格对字符进行划分，进而统计序列中总的字符数
 word_count = sorted(word_count.items(), key=lambda d:d[1], reverse = True)   # 按照元组中第二个元组进行排序
+
+```
+
+
+```python
 i = 0
 n = 0
 while(i < len(word_count)):
-    if(word_count[i][0] is '3750'|'900'|'648'):
+    if(word_count[i][0] == '3750' or '900' or '648'):
         n += word_count[i][1]
     i=i+1
-print('/n每篇新闻平均由{0}个句子构成'.format(n))
+print('句子总数为{0}\n每篇新闻平均由{1}个句子构成'.format(n,n/200000))
+```
 
+    句子总数为181441422
+    每篇新闻平均由907.20711个句子构成
+    
+
+* 题目二：
+
+
+```python
 
 ```
