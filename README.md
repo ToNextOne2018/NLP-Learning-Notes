@@ -167,7 +167,7 @@ plt.title("Histogram of char count")
 
 
 
-![png](https://github.com/ToNextOne2018/NLP-Learning-Notes/tree/master/jupyterTest1/output_9_1.png)
+![png](https://github.com/ToNextOne2018/NLP-Learning-Notes/blob/master/jupyterTest1/output_9_1.png)
 
 
 
