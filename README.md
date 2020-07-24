@@ -290,29 +290,122 @@ __分析：__
 ## 4. 习题
 __* 题目一：__
 
+* 假设字符3750，字符900和字符648是句子的标点符号，请分析赛题每篇新闻平均由多少个句子构成？
+
+{'科技': 0, '股票': 1, '体育': 2, '娱乐': 3, '时政': 4, '社会': 5,'教育': 6, '财经': 7, '家居': 8, '游戏': 9, '房产': 10, '时尚': 11, '彩票': 12, '星座': 13}
+
 
 ```python
-from collections import Counter
-all_lines = ' '.join(list(train_df['text']))   # 将text的中的字符重新组合成一个序列（由元组构成的列表）
-word_count = Counter(all_lines.split(" "))    # 通过空格对字符进行划分，进而统计序列中总的字符数
-word_count = sorted(word_count.items(), key=lambda d:d[1], reverse = True)   # 按照元组中第二个元组进行排序
-
+import pandas as pd  
+train_df = pd.read_csv('C:/Users/14279/Desktop/NLP_news/train_set.csv',sep='\t')   # 读取全部数据
+train_df.head(3)  #查看前几行数据是否读入正确，默认为5行
 ```
+
+
+
+
+<div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>label</th>
+      <th>text</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>0</td>
+      <td>2</td>
+      <td>2967 6758 339 2021 1854 3731 4109 3792 4149 15...</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>11</td>
+      <td>4464 486 6352 5619 2465 4802 1452 3137 5778 54...</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>3</td>
+      <td>7346 4068 5074 3747 5681 6093 1777 2226 7354 6...</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+
+
+1. 连接句子  
+2. 通过三个字符划分句子
+3. 新闻均句子数
+
+
+```python
+%pylab inline
+train_df['text_len'] = train_df['text'].apply(lambda x: len(x.split('3750' or '900' or '648')))   # 通过375，900，648三个数进行句子划分
+```
+
+    Populating the interactive namespace from numpy and matplotlib
+    
 
 
 ```python
 i = 0
-n = 0
-while(i < len(word_count)):
-    if(word_count[i][0] == '3750' or '900' or '648'):   # 统计'3750'、'900'、'648'出现的总次数n，句子总数就等于n
-        n += word_count[i][1]
-    i=i+1
-print('句子总数为{0}\n每篇新闻平均由{1}个句子构成'.format(n,n/200000))  # 用句子总数除以总新闻篇数，得到每篇新闻含有的句子的平均数
+j = len(train_df['label'])  # 设置j，获取数据总行数
+total_number = 0
+while(i < j):
+    print('第{0}条新闻有{1}个句子'.format(i,train_df['text_len'][i]))
+    total_number = total_number+train_df['text_len'][i]
+    i= i+1
+   
+print('总句子数为{0},平均每条新闻有{1}个句子'.format(total_number,total_number/j))
 ```
 
-    句子总数为181441422
-    每篇新闻平均由907.20711个句子构成
-    
+    第0条新闻有65个句子
+    第1条新闻有26个句子
+    第2条新闻有28个句子
+    第3条新闻有87个句子
+    第4条新闻有12个句子
+    第5条新闻有27个句子
+    第6条新闻有5个句子
+    第7条新闻有44个句子
+    第8条新闻有2个句子
+    第9条新闻有47个句子
+    第10条新闻有35个句子  
+    …………  
+    第199987条新闻有8个句子
+    第199988条新闻有53个句子
+    第199989条新闻有12个句子
+    第199990条新闻有5个句子
+    第199991条新闻有67个句子
+    第199992条新闻有15个句子
+    第199993条新闻有7个句子
+    第199994条新闻有137个句子
+    第199995条新闻有42个句子
+    第199996条新闻有68个句子
+    第199997条新闻有52个句子
+    第199998条新闻有8个句子
+    第199999条新闻有85个句子
+    总句子数为7682224,平均每条新闻有38.41112个句子
+```python
+
+```   
+__分析__  
+* 由上面可得总句子数为 __7682224__ 个，每条新闻平均有 __38.41112__ 个句子
+* 本题难点在于如何理解与 __DataFrame__ 相关的函数调用方法和 __while__ 循环语句的使用
 
 __* 题目二：__
 
