@@ -4,7 +4,7 @@ Record of NLP learning process.
 NLP学习笔记
 ===========  
 ------------
-<font color=red> 2020/07/21 task1 </font>
+# > 2020/07/21 task1
 ----------
 ### 1. 学前准备  
 * 登录学习 __Markdown__ 的基础知识    参考[菜鸟教程](https://www.runoob.com)
