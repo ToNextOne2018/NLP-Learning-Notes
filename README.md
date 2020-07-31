@@ -523,7 +523,27 @@ print(f1_score(train_df['label'].values[-5000:].astype(str), val_pred, average='
     0.8193809353909386  
 --------------------------  
 __分析：__  
-* 
-    
+*  
+-----------------------------
+># 2020/07/31 task5
+# 基于深度学习的文本分类2-1Word2Vec
+-----------------------------  
+## 1. 代码测试  
+```python
+import logging
+import random
+
+import numpy as np
+import torch
+
+logging.basicConfig(level=logging.INFO, format='%(asctime)-15s %(levelname)s: %(message)s')
+
+# set seed 
+seed = 666
+random.seed(seed)
+np.random.seed(seed)
+torch.cuda.manual_seed(seed)
+torch.manual_seed(seed)
+```
 
 
