@@ -544,6 +544,34 @@ random.seed(seed)
 np.random.seed(seed)
 torch.cuda.manual_seed(seed)
 torch.manual_seed(seed)
+```  
+---------------------------------
+># 2020/08/04 task6
+# 基于深度学习的文本分类  
+-------------------------------  
+## 1. 代码测试   
+```python
+class WhitespaceTokenizer(object):
+    """WhitespaceTokenizer with vocab."""
+    def __init__(self, vocab_file):
+        self.vocab = load_vocab(vocab_file)
+        self.inv_vocab = {v: k for k, v in self.vocab.items()}
+
+    def tokenize(self, text):
+        split_tokens = whitespace_tokenize(text)
+        output_tokens = []
+        for token in split_tokens:
+            if token in self.vocab:
+                output_tokens.append(token)
+            else:
+                output_tokens.append("[UNK]")
+        return output_tokens
+
+    def convert_tokens_to_ids(self, tokens):
+        return convert_by_vocab(self.vocab, tokens)
+
+    def convert_ids_to_tokens(self, ids):
+        return convert_by_vocab(self.inv_vocab, ids)
 ```
 
 
